@@ -7,7 +7,7 @@ namespace Starter.Models
         public int id{get;set;}
         public string bandName{get;set;}
         public int yearFormed{get;set;}
-        public int numberOfMembers{get;set;}
+        public string contactEmail{get;set;}
         public bool isActive{get;set;}
         public List<AlbumModel> albums{get;set;}
     }
