@@ -89,7 +89,7 @@ namespace Starter.Controllers
         // display form to add album to db
         public IActionResult CreateAlbumForm(int bandID)
         {
-            BandModel foundBand = _context.bands.Include(band => band.albums).FirstOrDefault(band => band.id == bandID);
+            // BandModel foundBand = _context.bands.Include(band => band.albums).FirstOrDefault(band => band.id == bandID);
             ViewData["bandID"] = bandID;
             return View();
         }
