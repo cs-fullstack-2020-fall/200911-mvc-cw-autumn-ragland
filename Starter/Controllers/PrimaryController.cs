@@ -45,7 +45,7 @@ namespace Starter.Controllers
             BandModel foundBand = _context.bands.FirstOrDefault(band => band.id == updateBand.id);
             foundBand.bandName = updateBand.bandName;
             foundBand.yearFormed = updateBand.yearFormed;
-            foundBand.contactEmail = updateBand.bandName;
+            foundBand.contactEmail = updateBand.contactEmail;
             foundBand.isActive = updateBand.isActive;
             _context.SaveChanges();
             return RedirectToAction("Index");
@@ -66,8 +66,10 @@ namespace Starter.Controllers
             return RedirectToAction("Index");
         }
         // display form to add album to db
-        public IActionResult CreateAlbumForm()
+        public IActionResult CreateAlbumForm(int bandID)
         {
+            BandModel foundBand = _context.bands.Include(band => band.albums).FirstOrDefault(band => band.id == bandID);
+            ViewData["bandID"] = bandID;
             return View();
         }
     }

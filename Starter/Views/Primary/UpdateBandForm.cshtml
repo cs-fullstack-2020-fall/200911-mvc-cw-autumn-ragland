@@ -1,1 +1,11 @@
 @* use partials to render form fields *@
+@model Starter.Models.BandModel
+<h1>Update a Band</h1>
+@using (@Html.BeginForm("UpdateBand", "Primary"))
+{
+    <partial name = "_BandForm"/>
+    <div>
+      @Html.HiddenFor(band => band.id)  
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+}

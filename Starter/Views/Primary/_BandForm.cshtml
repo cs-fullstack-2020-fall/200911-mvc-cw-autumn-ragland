@@ -1,0 +1,20 @@
+@model Starter.Models.BandModel
+<div class="form-group">
+    @Html.LabelFor(band => band.bandName)
+    @Html.TextBoxFor(band => band.bandName, new { @class="form-control"})
+    @Html.ValidationMessageFor(band => band.bandName)
+</div>
+<div class="form-group">
+    @Html.LabelFor(band => band.yearFormed)
+    @Html.TextBoxFor(band => band.yearFormed, new { @class="form-control"})
+    @Html.ValidationMessageFor(band => band.yearFormed)
+</div>
+<div class="form-group">
+    @Html.LabelFor(band => band.contactEmail)
+    @Html.TextBoxFor(band => band.contactEmail, new { @class="form-control"})
+    @Html.ValidationMessageFor(band => band.contactEmail)
+</div>
+<div class="form-check">
+    @Html.CheckBoxFor(band => band.isActive, new { @class="form-check-input"})
+    @Html.LabelFor(band => band.isActive, new { @class="form-check-label"})
+</div>

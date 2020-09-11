@@ -1,1 +1,7 @@
 @* use partials to render form fields *@
+<h1>Add a Band</h1>
+@using (@Html.BeginForm("CreateBand", "Primary"))
+{
+    <partial name = "_BandForm"/>
+    <button type="submit" class="btn btn-primary">Submit</button>
+}
