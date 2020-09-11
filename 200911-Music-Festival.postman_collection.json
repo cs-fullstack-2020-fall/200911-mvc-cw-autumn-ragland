@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "b09a7f8f-7655-4cab-83d6-b40b559dee62",
+		"name": "200911-Music-Festival",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Band",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "bandName",
+							"value": "Ipsum",
+							"type": "text"
+						},
+						{
+							"key": "yearFormed",
+							"value": "2018",
+							"type": "text"
+						},
+						{
+							"key": "contactEmail",
+							"value": "ipsum@email.com",
+							"type": "text"
+						},
+						{
+							"key": "isActive",
+							"value": "false",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/Primary/CreateBand",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Primary",
+						"CreateBand"
+					],
+					"query": [
+						{
+							"key": "AddProfessor",
+							"value": "Yancy",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Album",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "bandID",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Dolor",
+							"type": "text"
+						},
+						{
+							"key": "yearReleased",
+							"value": "2020",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/Primary/CreateAlbum",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Primary",
+						"CreateAlbum"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Band",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "bandName",
+							"value": "Sit",
+							"type": "text"
+						},
+						{
+							"key": "yearFormed",
+							"value": "2016",
+							"type": "text"
+						},
+						{
+							"key": "contactEmail",
+							"value": "sit@email.com",
+							"type": "text"
+						},
+						{
+							"key": "isActive",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:5001/Primary/UpdateBand",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"Primary",
+						"UpdateBand"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
