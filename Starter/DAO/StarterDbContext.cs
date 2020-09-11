@@ -8,7 +8,7 @@ namespace Starter.DAO
         {
         }
         // make and apply migrations
-        DbSet<BandModel> bands{get;set;}
-        DbSet<AlbumModel> albums{get;set;}
+        public DbSet<BandModel> bands{get;set;}
+        public DbSet<AlbumModel> albums{get;set;}
     }
 }

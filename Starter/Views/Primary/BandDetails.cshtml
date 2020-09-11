@@ -1,1 +1,12 @@
-@* use partials to render band info *@
+@model Starter.Models.BandModel
+<partial name="_Band"/> 
+<div class="card-group">
+  <div class="card">
+    @foreach (AlbumModel album in @Model.albums)
+    {
+        <div class="card-body">
+        <h5 class="card-title">@album.title</h5>
+        </div>
+    }
+  </div>
+</div>
