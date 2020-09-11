@@ -7,7 +7,7 @@ Build a MVC web application to display and update bands' album information
 	-id : PK
 	- bandName : Required, less than 50 charcaters
 	- yearFormed : Between 1960 and 2020
-	- numberOfMembers : Required
+	- contactEmail : Valid email adress
 	- isActive : boolean
 	- Albums : list of albums
 - Album
