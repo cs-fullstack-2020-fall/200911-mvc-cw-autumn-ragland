@@ -29,9 +29,16 @@ namespace Starter.Controllers
         [HttpPost]
         public IActionResult CreateBand(BandModel newBand)
         {
-            _context.bands.Add(newBand);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            if(ModelState.IsValid)
+            {
+                _context.bands.Add(newBand);
+                _context.SaveChanges();
+                return RedirectToAction("Index"); 
+            } else 
+            {
+                return View("CreateBandForm", newBand);
+            }
+
         }
         // display form to add band to db
         public IActionResult CreateBandForm()
@@ -43,12 +50,19 @@ namespace Starter.Controllers
         public IActionResult UpdateBand(BandModel updateBand)
         {
             BandModel foundBand = _context.bands.FirstOrDefault(band => band.id == updateBand.id);
-            foundBand.bandName = updateBand.bandName;
-            foundBand.yearFormed = updateBand.yearFormed;
-            foundBand.contactEmail = updateBand.contactEmail;
-            foundBand.isActive = updateBand.isActive;
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            if(ModelState.IsValid)
+            {
+                foundBand.bandName = updateBand.bandName;
+                foundBand.yearFormed = updateBand.yearFormed;
+                foundBand.contactEmail = updateBand.contactEmail;
+                foundBand.isActive = updateBand.isActive;
+                _context.SaveChanges();
+                return RedirectToAction("Index"); 
+            } else 
+            {
+                return View("UpdateBandForm", updateBand);
+            }
+
         }
         public IActionResult UpdateBandForm(int id)
         {
@@ -60,10 +74,17 @@ namespace Starter.Controllers
         public IActionResult CreateAlbum(AlbumModel newAlbum)
         {
             BandModel foundBand = _context.bands.Include(band => band.albums).FirstOrDefault(band => band.id == newAlbum.bandID);
-            foundBand.albums.Add(newAlbum);
-            _context.albums.Add(newAlbum);
-            _context.SaveChanges();
-            return RedirectToAction("Index");
+            if(ModelState.IsValid)
+            {
+                foundBand.albums.Add(newAlbum);
+                _context.albums.Add(newAlbum);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            } else 
+            {
+                return View("CreateAlbumForm", newAlbum);
+            }
+
         }
         // display form to add album to db
         public IActionResult CreateAlbumForm(int bandID)

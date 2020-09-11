@@ -1,4 +1,5 @@
 @model Starter.Models.BandModel
+@Html.ValidationSummary()
 <div class="form-group">
     @Html.LabelFor(band => band.bandName)
     @Html.TextBoxFor(band => band.bandName, new { @class="form-control"})
